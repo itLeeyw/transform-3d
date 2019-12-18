@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/carousel.css" />
+    <title>3D变换</title>
+</head>
+<body>
+    <div class="box-3d-wrap">
+        <h1>Css3 3d应用场景大赏</h1>
+        <div class="app-wrap">
+            <div class="app-container">
+                <div class="carousel-3d-wrap">
+                    <span class="title-3d">3d旋转木马轮播</span>
+                    <div class="carousel-3d-stage">
+                        <div class="carousel-3d-container container">
+                            <img src="assets/Luffy.jpg" alt="路飞">
+                            <img src="assets/Zero.jpg" alt="佐罗">
+                            <img src="assets/Ace.jpg" alt="艾斯">
+                            <img src="assets/BoaHancock.jpg" alt="女帝">
+                            <img src="assets/Chobar.jpg" alt="乔巴">
+                            <img src="assets/Domenico.jpg" alt="多弗朗明哥">
+                        </div>
+                    </div>
+                    <div class="readme" >
+                        旋转木马思路
+                        <h3>
+                            框架：
+                        </h3>
+                        <pre class="">
+                            应用:
+                                    标题：
+                                    舞台：
+                                        容器：
+                                            img1:
+                                            img2:
+                                            img3:
+                                            img4:
+                                            img5:
+                                            img6:
+                                    思路：
+                        </pre>
+                        <h3>
+                            基本介绍：
+                        </h3>
+                        <pre>
+                            图片长宽为200 * 200 px
+                            将<strong>perspective(视点)设置800px</strong>距离 <strong>保证舞台的合适距离</strong>。
+                        </pre>
+                        <h3>
+                            技术实现：
+                        </h3>
+                        <h4>
+                            1. 3d图像设置：
+                        </h4>
+                        <pre>
+                            将容器<strong>transform-style: preserve-3d;</strong>自不必多说。
+                            容器设置为<strong>position: relative;</strong>
+                            设置图片为<strong>position: absolute; </strong>让每张图片都公用一个中心点。
+                            <strong>显然</strong>,旋转木马旋转木马，自然是围着钢管(Y轴)旋转，所以我们只需控制rotateY便可。
+                            因为一个周期为360°，我们有6张图片，正好等分，所以将每张图片都设置<strong>transform: rotateY( n*60deg );</strong>
+                            但为了让每张图片都看清楚，而不是挤在一起，就需要用到我们的<strong>translateZ</strong>,声明它的元素可以让其向它的正前方移动或者后退。
+                            我们便设置它让图片向显示器走来(设置合适大小即可)。
+                        </pre>
+                        <h4>
+                            2. 动画设置：
+                        </h4>
+                        <pre>
+                            由于有6张图片，设置关键帧每<strong>1/6</strong>处进行一次动画<strong>transform: rotateY( n*60deg );</strong>
+                            最后对app容器应用动画：
+                            /* 以下设置依次为：设置动画名，设置动画时常为6s， 设置贝塞尔曲线为缓入快出，设置一直进行动画 */
+                            animation-name: name; 
+                            animation-duration: 6s;
+                            animation-timing-function: ease-in-out;
+                            animation-iteration-count: infinite;
+                        </pre>
+                        <h3>
+                            源码：Github，如果觉得对您有帮助请点个star吧
+                        </h3>
+                    </div>
+                </div>            
+            </div>
+            <div class="app-container">
+                <div class="MagicCube-3d-wrap">
+                    <span class="title-3d">3d魔方照片</span>
+                    <div class="MagicCube-3d-container container">
+                        具体图像
+                    </div>
+                    <div class="readmeMD">
+                        完成思路
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+</body>
+</html>

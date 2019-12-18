@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box-3d-wrap{
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+.app-wrap{    
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border: 5px solid blue;
+}
+.app-container{
+    flex: 1;
+    border: 1px solid red;
+}
+.container{
+    height: 300px;
+    width: 100%;
+    margin: 40px 0;
+    transform-style: preserve-3d;
+    position: relative;
+    border: 1px solid brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container > img{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+}
+.readme{
+    text-align: left;
+}

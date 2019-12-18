@@ -1,0 +1,41 @@
+.carousel-3d-wrap{
+border:none;
+}
+.carousel-3d-stage{
+    perspective: 800px;
+}
+.carousel-3d-container{
+    animation-name: merry-item;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+@keyframes merry-item{
+    from {
+        transform: rotateY( 0deg );
+    }
+    16.667%{
+        transform: rotateY( 60deg );
+    }
+    33.334%{
+        transform: rotateY( 120deg );
+    }
+    50.001%{
+        transform: rotateY( 180deg );
+    }
+    66.668%{
+        transform: rotateY( 240deg );
+    }
+    83.335%{
+        transform: rotateY( 300deg );
+    }
+    100%{
+        transform: rotateY( 360deg );
+    }
+}
+.carousel-3d-container > img:nth-child(1) { transform: rotateY(   0deg ) translateZ(250px); }
+.carousel-3d-container > img:nth-child(2) { transform: rotateY(  60deg ) translateZ(250px); }
+.carousel-3d-container > img:nth-child(3) { transform: rotateY( 120deg ) translateZ(250px); }
+.carousel-3d-container > img:nth-child(4) { transform: rotateY( 180deg ) translateZ(250px); }
+.carousel-3d-container > img:nth-child(5) { transform: rotateY( 240deg ) translateZ(250px); }
+.carousel-3d-container > img:nth-child(6) { transform: rotateY( 300deg ) translateZ(250px); }
